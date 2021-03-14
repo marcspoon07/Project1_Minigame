@@ -2,6 +2,7 @@
 
 #include <SDL.h>
 #include <SDL_mixer.h>
+#include <SDL_image.h>
 
 #include "../simple_types.h"
 
@@ -12,10 +13,12 @@
 
 #include "Singleton.h"
 
+// Resources
+#include "utilities/Sprite.h"
+
 typedef uint32 ResourceId;
 
 typedef Mix_Chunk AudioClip;
-typedef SDL_Surface Sprite;
 
 class Resources : public Singleton<Resources>
 {
@@ -58,7 +61,7 @@ inline uint32 Resources::Load<Sprite>(const char * file)
 	Uint32 resourceId = -1;
 
 	for (i = 0; i < size; i++) {
-		if (mResources[RT_SPRITE][i]->filePath == file) {
+		if (m_Resources[RT_SPRITE][i]->filePath == file) {
 			resourceId = static_cast<Uint32>(i);
 			break;
 		}
@@ -68,7 +71,7 @@ inline uint32 Resources::Load<Sprite>(const char * file)
 		SDL_Surface* srfc = IMG_Load(file);
 
 		if (!srfc) {
-			std::cout << IMG_GetError() << std::endl;
+			Debug::getInstance()->LogError("RESOURCES", IMG_GetError());
 		}
 		else {
 			Resource* resource = new Resource();
@@ -79,26 +82,29 @@ inline uint32 Resources::Load<Sprite>(const char * file)
 
 			resourceId = static_cast<uint32>(size);
 
-			mResources[RT_SPRITE].push_back(resource);
+			m_Resources[RT_SPRITE].push_back(resource);
 
-			std::cout << "RESOURCES: Loaded " << file << std::endl;
+			std::string message = "LOADED SPRITE: ";
+			message += file;
+
+			Debug::getInstance()->Log("RESOURCES", message.c_str());
 		}
 	}
 
 	return resourceId;
 }
 
-//template<>
-//inline Sprite* Resources::GetResourceById<Sprite>(ResourceId id)
-//{
-//	Sprite* surface = NULL;
-//
-//	if (id >= 0 && id < mResources[RT_SPRITE].size()) {
-//		surface = static_cast<Sprite*>(mResources[RT_SPRITE][id]->resource);
-//	}
-//
-//	return surface;
-//}
+template<>
+inline Sprite* Resources::GetResourceById<Sprite>(ResourceId id)
+{
+	Sprite* sprite = NULL;
+
+	if (id >= 0 && id < m_Resources[RT_SPRITE].size()) {
+		sprite = static_cast<Sprite*>(m_Resources[RT_SPRITE][id]->resource);
+	}
+
+	return sprite;
+}
 
 // SPECIALIZATION FOR MIX_CHUNK
 template<>
@@ -133,7 +139,10 @@ inline ResourceId Resources::Load<AudioClip>(const char * file)
 
 			m_Resources[RT_AUDIOCLIP].push_back(resource);
 
-			Debug::getInstance()->Log("Resources LOADED", file);
+			std::string message = "LOADED AUDIO: ";
+			message += file;
+
+			Debug::getInstance()->Log("RESOURCES", message.c_str());
 		}
 	}
 

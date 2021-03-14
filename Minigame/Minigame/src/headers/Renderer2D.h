@@ -6,8 +6,11 @@
 
 #include "Debug.h"
 #include "Video.h"
+#include "Resources.h"
 
 #include "../simple_types.h"
+
+#include "utilities/Sprite.h"
 
 class Renderer2D : public Singleton<Renderer2D> {
 	friend class Singleton<Renderer2D>;
@@ -20,4 +23,6 @@ public:
 	~Renderer2D();
 
 	// Implementar funciones de renderizado
+	void RenderGraphic(uint32 img, int sourcePosX, int sourcePosY, int posX, int posY, int width, int height);
+	void RenderGraphic(int img, int posX, int posY);
 };
