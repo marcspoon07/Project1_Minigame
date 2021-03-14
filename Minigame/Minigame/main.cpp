@@ -26,16 +26,16 @@ int main(int argc, char* args[]) {
 
 	// Program loop
 	while (!input->WindowQuit()) {
-		video->clearScreen();
+		video->ClearScreen();
 		input->UpdateInputs();
 
 		sceneManager->Update();
 
-		video->updateScreen();
-		video->tickDelay();
+		video->UpdateScreen();
+		video->TickDelay();
 	}
 
-	video->close();
+	video->Close();
 
 	// Delete all singletons
 
