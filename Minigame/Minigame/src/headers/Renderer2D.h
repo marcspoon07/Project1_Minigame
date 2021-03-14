@@ -12,6 +12,10 @@
 
 #include "utilities/Sprite.h"
 
+#define SPRITE_SIZE 24
+
+typedef SDL_Rect Rectangle;
+
 class Renderer2D : public Singleton<Renderer2D> {
 	friend class Singleton<Renderer2D>;
 
