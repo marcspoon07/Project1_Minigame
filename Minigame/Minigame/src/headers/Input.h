@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SDL.h>
+
 #include "Singleton.h"
 
 #include "../simple_types.h"

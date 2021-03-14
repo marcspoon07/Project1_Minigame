@@ -26,6 +26,7 @@ void MainMenu::Load()
 	Scene::Load();
 
 	/*Audio::getInstance()->PlayMusic(mBackgroundMusicId);*/
+	Debug::getInstance()->Log("SCENE", "LOADED MAIN SCENE");
 }
 
 void MainMenu::ProcessInput()
@@ -47,7 +48,6 @@ void MainMenu::UpdateLoop()
 {
 	/*mPlayButton->Update();
 	mQuitButton->Update();*/
-	Debug::getInstance()->Log("SCENE", "PLAYING MAIN SCENE");
 }
 
 void MainMenu::UpdateLeave()

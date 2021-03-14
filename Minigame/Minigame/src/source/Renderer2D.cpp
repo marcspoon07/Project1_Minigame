@@ -1,6 +1,10 @@
 #include "..\headers\Renderer2D.h"
 
 Renderer2D::Renderer2D() {
+	if (IMG_Init(IMG_INIT_PNG | IMG_INIT_JPG) == 0) {
+		Debug::getInstance()->LogError("RENDERER2D", IMG_GetError());
+	}
+
 	m_Video = Video::getInstance();
 }
 
@@ -22,7 +26,12 @@ void Renderer2D::RenderGraphic(uint32 img, int sourcePosX, int sourcePosY, int p
 		rectAux.x = sourcePosX;
 		rectAux.y = sourcePosY;
 
-		SDL_BlitSurface(sprite->getSurface(), &rectAux, m_Video->getScreenSurface(), &r);
+		SDL_Surface* sprite_srfc = sprite->getSurface();
+		SDL_Surface* screen_srfc = m_Video->getScreenSurface();
+
+		if (SDL_BlitSurface(sprite_srfc, &rectAux, screen_srfc, &r) == -1) {
+			Debug::getInstance()->LogWarning("RENDERER2D", SDL_GetError());
+		}
 	}
 }
 

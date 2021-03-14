@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "../utilities/Image.h"
 
 class GameScene : public Scene {
 public:
@@ -20,5 +21,5 @@ private:
 	void RenderLeave() override;
 
 	// Required resources
-	ResourceId m_BackgroundId;
+	Image* m_BackgroundImage;
 };

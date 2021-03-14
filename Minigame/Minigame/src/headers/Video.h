@@ -24,25 +24,25 @@ private:
 	SDL_Window* m_Window;
 	SDL_Surface* m_ScreenSurface;
 
-	int m_ScreenWidth, mScreenHeight;
+	int m_ScreenWidth, m_ScreenHeight;
 
 	std::string m_WindowTitle;
 public:
 	Video();
 	~Video();
 
-	unsigned int getDeltaTime();
-
 	void ResizeWindow(int width, int height);
 
-	void clearScreen();
-	void updateScreen();
-	void waitTime(int ms);
-	void tickDelay();
-	void close();
+	void ClearScreen();
+	void UpdateScreen();
+	void Delay(int ms);
+	void TickDelay();
+	void Close();
 
 	int getScreenWidth() { return m_ScreenWidth; }
-	int getScreenHeight() { return mScreenHeight; }
+	int getScreenHeight() { return m_ScreenHeight; }
+
+	unsigned int getDeltaTime() { return m_DeltaTime; }
 
 	SDL_Surface* getScreenSurface() { return m_ScreenSurface; }
 };
