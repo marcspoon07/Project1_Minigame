@@ -13,12 +13,17 @@ Spawner::~Spawner()
 
 void Spawner::SpawnWave()
 {
-	
+	m_Enemies = new Enemy [m_MaxEenmies];
+	m_CurrentEnemies = 0;
 	for (int i = 0; i < m_MaxEenmies; i++)
 	{
 		if (m_CurrentEnemies <= m_MaxEenmies)
 		{
-			//spawn enemy
+			m_Enemies[i].InitType();
+			//init velocity
+			//init position
+			//
+			m_CurrentEnemies++;
 		}
 	}
 }
@@ -29,6 +34,7 @@ void Spawner::ClearWave()
 	{
 		//if enemy Alive
 		//enemies-> despawn()
+		m_CurrentEnemies--;
 	}
 }
 
@@ -38,7 +44,7 @@ void Spawner::Update()
 	{
 		for (int i = 0; i < m_MaxEenmies; i++)
 		{
-			//enemies-> update()
+			m_Enemies[i].Update();
 		}
 	}
 }
@@ -49,7 +55,7 @@ void Spawner::Render()
 	{
 		for (int i = 0; i < m_MaxEenmies; i++)
 		{
-			//eneimes-> render()
+			m_Enemies[i].Render();
 		}
 	}
 }
