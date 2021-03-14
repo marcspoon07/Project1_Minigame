@@ -4,11 +4,17 @@
 #include "src/headers/Renderer2D.h"
 #include "src/headers/scene/SceneManager.h"
 
+#include <time.h>
+#include <iostream>
+
 // Scenes
 #include "src/headers/scene/MainMenu.h"
 #include "src/headers/scene/GameScene.h"
+#include "src/headers/scene/GameOverMenu.h"
 
 int main(int argc, char* args[]) {
+	srand(time(NULL));
+
 	// Create all necessary singletons
 	Video* video = Video::getInstance();
 	Input* input = Input::getInstance();
@@ -20,6 +26,7 @@ int main(int argc, char* args[]) {
 	// Create scenes
 	sceneManager->CreateScene<MainMenu>(SceneManager::SceneEnum::SCENE_MAIN);
 	sceneManager->CreateScene<GameScene>(SceneManager::SceneEnum::SCENE_GAME);
+	sceneManager->CreateScene<GameOverMenu>(SceneManager::SceneEnum::SCENE_GAMEOVER);
 
 	// Initialize the scene manager
 	sceneManager->Init(SceneManager::SceneEnum::SCENE_MAIN);

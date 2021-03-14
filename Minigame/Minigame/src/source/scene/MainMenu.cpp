@@ -9,16 +9,16 @@ MainMenu::MainMenu()
 
 MainMenu::~MainMenu()
 {
-	/*delete mMainMenuImage;
-	delete mPlayButton;
-	delete mQuitButton;*/
+	delete m_PlayButton;
+	delete m_QuitButton;
+	delete m_MainImage;
 }
 
 void MainMenu::Init()
 {
-	/*mMainMenuImage = new Image("Assets/Resources/menus/mainMenu.png", 0, 0);
-	mPlayButton = new PlayButton("Assets/Resources/menus/button_jugar.png", 84, 150);
-	mQuitButton = new QuitButton("Assets/Resources/menus/button_sortir.png", 84, 190);*/
+	m_MainImage = new Image("Assets/Sprites/main_menu.png", 0, 0);
+	m_PlayButton = new PlayButton("Assets/Sprites/play_button.png", 352, 290);
+	m_QuitButton = new QuitButton("Assets/Sprites/quit_button.png", 352, 380);
 }
 
 void MainMenu::Load()
@@ -31,12 +31,8 @@ void MainMenu::Load()
 
 void MainMenu::ProcessInput()
 {
-	/*if (Input::getInstance()->getKey(SCANCODE_ESC)) {
+	if (Input::getInstance()->getKey(SDL_SCANCODE_ESCAPE)) {
 		Input::getInstance()->QuitGame();
-	}*/
-
-	if (Input::getInstance()->getKeyDown(SDL_SCANCODE_SPACE)) {
-		ChangeScene(SceneManager::SceneEnum::SCENE_GAME);
 	}
 }
 
@@ -46,8 +42,8 @@ void MainMenu::UpdateEnter()
 
 void MainMenu::UpdateLoop()
 {
-	/*mPlayButton->Update();
-	mQuitButton->Update();*/
+	m_PlayButton->Update();
+	m_QuitButton->Update();
 }
 
 void MainMenu::UpdateLeave()
@@ -60,9 +56,9 @@ void MainMenu::RenderEnter()
 
 void MainMenu::RenderLoop()
 {
-	/*mMainMenuImage->Render();
-	mPlayButton->Render();
-	mQuitButton->Render();*/
+	m_MainImage->Render();
+	m_PlayButton->Render();
+	m_QuitButton->Render();
 }
 
 void MainMenu::RenderLeave()

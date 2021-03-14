@@ -1,4 +1,4 @@
-#include "../../headers/utilities/Image.h"
+#include "../../headers/ui/Image.h"
 #include "../../headers/Renderer2D.h"
 
 Image::Image(const char * path, int x, int y)

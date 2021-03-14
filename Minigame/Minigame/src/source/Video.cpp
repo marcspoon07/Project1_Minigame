@@ -9,7 +9,7 @@ Video::Video()
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 
-	m_WindowTitle = "Los q bitos";
+	m_WindowTitle = "Block Eater";
 
 	m_Window = SDL_CreateWindow(m_WindowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_ScreenWidth, m_ScreenHeight, SDL_WINDOW_SHOWN);
 	m_ScreenSurface = SDL_GetWindowSurface(m_Window);

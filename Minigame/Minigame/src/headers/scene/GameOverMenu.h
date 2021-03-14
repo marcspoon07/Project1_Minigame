@@ -1,14 +1,12 @@
 #pragma once
 #include "Scene.h"
-#include "../ui/Image.h"
-#include "../utilities/Animation.h"
+#include "../ui/PlayButton.h"
+#include "../ui/QuitButton.h"
 
-#include "../entities/Spawner.h"
-
-class GameScene : public Scene {
+class GameOverMenu : public Scene {
 public:
-	GameScene();
-	~GameScene();
+	GameOverMenu();
+	~GameOverMenu();
 
 	virtual void Init() override;
 	virtual void Load() override;
@@ -24,8 +22,4 @@ private:
 	void RenderLeave() override;
 
 	// Required resources
-	Image* m_BackgroundImage;
-	Image* m_BlockEaterImage;
-
-	Spawner m_Spawner;
 };

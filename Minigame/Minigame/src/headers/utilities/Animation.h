@@ -27,9 +27,10 @@ public:
 	Animation();
 	~Animation();
 
-	void Init(const char* name, uint32 frameCount, uint32 frameSpeed, uint32 positionY);
+	void Init(const char* path, uint32 frameCount, uint32 frameSpeed, uint32 positionY);
 	void Update();
 	void Render();
 
-	void ChangePosition(Vector2i position) { m_Position = position; }
+	void setPosition(Vector2i position) { m_Position = position; }
+	void setFrameSpeed(uint32 frameSpeed) { m_FrameSpeed = frameSpeed; }
 };

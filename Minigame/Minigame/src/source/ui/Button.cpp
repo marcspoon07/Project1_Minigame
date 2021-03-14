@@ -1,4 +1,4 @@
-#include "../../headers/utilities/Button.h"
+#include "../../headers/ui/Button.h"
 
 void Button::CheckMouseOver()
 {
@@ -17,7 +17,7 @@ Button::Button(const char* sheet_path, int x, int y)
 {
 	m_Resources = Resources::getInstance();
 	m_Renderer2D = Renderer2D::getInstance();
-	m_Input = m_Input;
+	m_Input = Input::getInstance();
 
 	m_ButtonSpriteSheet = m_Resources->Load<Sprite>(sheet_path);
 

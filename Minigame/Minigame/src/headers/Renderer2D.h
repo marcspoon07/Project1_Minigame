@@ -12,7 +12,7 @@
 
 #include "utilities/Sprite.h"
 
-#define SPRITE_SIZE 24
+#define SPRITE_SIZE 96
 
 typedef SDL_Rect Rectangle;
 

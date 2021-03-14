@@ -1,5 +1,8 @@
 #pragma once
 #include "Scene.h"
+#include "../ui/PlayButton.h"
+#include "../ui/QuitButton.h"
+#include "../ui/Image.h"
 
 class MainMenu : public Scene {
 	public:
@@ -20,4 +23,8 @@ class MainMenu : public Scene {
 		void RenderLeave() override;
 
 		// Required resources
+		PlayButton* m_PlayButton;
+		QuitButton* m_QuitButton;
+
+		Image* m_MainImage;
 };

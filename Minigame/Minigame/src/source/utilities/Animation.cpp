@@ -14,9 +14,9 @@ Animation::~Animation()
 }
 
 
-void Animation::Init(const char * name, uint32 frameCount, uint32 frameSpeed, uint32 positionY)
+void Animation::Init(const char * path, uint32 frameCount, uint32 frameSpeed, uint32 positionY)
 {
-	m_SpriteSheet = m_Resources->Load<Sprite>(name);
+	m_SpriteSheet = m_Resources->Load<Sprite>(path);
 	m_FramesCount = frameCount;
 	m_FrameSpeed = frameSpeed;
 	m_PositionY = positionY;

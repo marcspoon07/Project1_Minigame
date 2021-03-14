@@ -151,28 +151,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="src\source\entities\Character.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Spawner.cpp" />
+    <ClCompile Include="src\source\entities\Portal.cpp" />
+    <ClCompile Include="src\source\entities\Spawner.cpp" />
     <ClCompile Include="src\source\Audio.cpp" />
     <ClCompile Include="src\source\Debug.cpp" />
     <ClCompile Include="src\source\Game.cpp" />
     <ClCompile Include="src\source\Input.cpp" />
     <ClCompile Include="src\source\Renderer2D.cpp" />
     <ClCompile Include="src\source\Resources.cpp" />
+    <ClCompile Include="src\source\scene\GameOverMenu.cpp" />
     <ClCompile Include="src\source\scene\GameScene.cpp" />
     <ClCompile Include="src\source\scene\MainMenu.cpp" />
     <ClCompile Include="src\source\scene\Scene.cpp" />
     <ClCompile Include="src\source\scene\SceneManager.cpp" />
+    <ClCompile Include="src\source\ui\PlayButton.cpp" />
+    <ClCompile Include="src\source\ui\QuitButton.cpp" />
     <ClCompile Include="src\source\utilities\Animation.cpp" />
-    <ClCompile Include="src\source\utilities\Button.cpp" />
-    <ClCompile Include="src\source\utilities\Image.cpp" />
+    <ClCompile Include="src\source\ui\Button.cpp" />
+    <ClCompile Include="src\source\ui\Image.cpp" />
     <ClCompile Include="src\source\utilities\Sprite.cpp" />
     <ClCompile Include="src\source\Video.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Spawner.h" />
+    <ClInclude Include="src\headers\entities\Character.h" />
+    <ClInclude Include="src\headers\entities\Portal.h" />
+    <ClInclude Include="src\headers\entities\Spawner.h" />
     <ClInclude Include="src\headers\Audio.h" />
     <ClInclude Include="src\headers\Debug.h" />
     <ClInclude Include="src\headers\Game.h" />
@@ -184,14 +189,17 @@
     <ClInclude Include="src\headers\math\Vector2i.h" />
     <ClInclude Include="src\headers\Renderer2D.h" />
     <ClInclude Include="src\headers\Resources.h" />
+    <ClInclude Include="src\headers\scene\GameOverMenu.h" />
     <ClInclude Include="src\headers\scene\GameScene.h" />
     <ClInclude Include="src\headers\scene\MainMenu.h" />
     <ClInclude Include="src\headers\scene\Scene.h" />
     <ClInclude Include="src\headers\scene\SceneManager.h" />
     <ClInclude Include="src\headers\Singleton.h" />
+    <ClInclude Include="src\headers\ui\PlayButton.h" />
+    <ClInclude Include="src\headers\ui\QuitButton.h" />
     <ClInclude Include="src\headers\utilities\Animation.h" />
-    <ClInclude Include="src\headers\utilities\Button.h" />
-    <ClInclude Include="src\headers\utilities\Image.h" />
+    <ClInclude Include="src\headers\ui\Button.h" />
+    <ClInclude Include="src\headers\ui\Image.h" />
     <ClInclude Include="src\headers\utilities\Sprite.h" />
     <ClInclude Include="src\headers\Video.h" />
     <ClInclude Include="src\simple_types.h" />

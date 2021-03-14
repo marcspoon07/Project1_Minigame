@@ -11,6 +11,7 @@ class SceneManager : public Singleton<SceneManager> {
 		enum SceneEnum {
 			SCENE_MAIN,
 			SCENE_GAME,
+			SCENE_GAMEOVER,
 			SCENE_LAST
 		};
 	private:
