@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="src\source\Audio.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="src\source\Video.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Enemy.h" />
     <ClInclude Include="Spawner.h" />
     <ClInclude Include="src\headers\Audio.h" />
     <ClInclude Include="src\headers\Debug.h" />
