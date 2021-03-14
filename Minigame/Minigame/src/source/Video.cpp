@@ -40,7 +40,7 @@ void Video::ResizeWindow(int width, int height)
 
 void Video::clearScreen()
 {
-	// TODO: Clear screen
+	SDL_FillRect(m_ScreenSurface, NULL, 0xFFFFFF);
 }
 
 void Video::updateScreen()
@@ -49,7 +49,7 @@ void Video::updateScreen()
 	title += " - ";
 	title += std::to_string(m_DeltaTime);
 	SDL_SetWindowTitle(m_Window, title.c_str());
-	SDL_GL_SwapWindow(m_Window);
+	SDL_UpdateWindowSurface(m_Window);
 }
 
 void Video::waitTime(int ms)
