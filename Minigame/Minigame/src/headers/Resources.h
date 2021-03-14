@@ -15,6 +15,7 @@
 typedef uint32 ResourceId;
 
 typedef Mix_Chunk AudioClip;
+typedef SDL_Surface Sprite;
 
 class Resources : public Singleton<Resources>
 {
@@ -47,45 +48,45 @@ public:
 	template<class T> T* GetResourceById(ResourceId id);
 };
 
-// SPECIALIZATION FOR SPRITE
-//template<>
-//inline uint32 Resources::Load<Sprite>(const char * file)
-//{
-//	size_t size = mResources[ResourceType::RT_SPRITE].size();
-//	size_t i;
-//
-//	Uint32 resourceId = -1;
-//
-//	for (i = 0; i < size; i++) {
-//		if (mResources[RT_SPRITE][i]->filePath == file) {
-//			resourceId = static_cast<Uint32>(i);
-//			break;
-//		}
-//	}
-//
-//	if (i == size) {
-//		Surface* srfc = IMG_Load(file);
-//
-//		if (!srfc) {
-//			std::cout << IMG_GetError() << std::endl;
-//		}
-//		else {
-//			Resource* resource = new Resource();
-//
-//			resource->filePath = file;
-//
-//			resource->resource = new Sprite(srfc, srfc->w, srfc->h);
-//
-//			resourceId = static_cast<uint32>(size);
-//
-//			mResources[RT_SPRITE].push_back(resource);
-//
-//			std::cout << "RESOURCES: Loaded " << file << std::endl;
-//		}
-//	}
-//
-//	return resourceId;
-//}
+//SPECIALIZATION FOR SPRITE
+template<>
+inline uint32 Resources::Load<Sprite>(const char * file)
+{
+	size_t size = m_Resources[ResourceType::RT_SPRITE].size();
+	size_t i;
+
+	Uint32 resourceId = -1;
+
+	for (i = 0; i < size; i++) {
+		if (mResources[RT_SPRITE][i]->filePath == file) {
+			resourceId = static_cast<Uint32>(i);
+			break;
+		}
+	}
+
+	if (i == size) {
+		SDL_Surface* srfc = IMG_Load(file);
+
+		if (!srfc) {
+			std::cout << IMG_GetError() << std::endl;
+		}
+		else {
+			Resource* resource = new Resource();
+
+			resource->filePath = file;
+
+			resource->resource = new Sprite(srfc, srfc->w, srfc->h);
+
+			resourceId = static_cast<uint32>(size);
+
+			mResources[RT_SPRITE].push_back(resource);
+
+			std::cout << "RESOURCES: Loaded " << file << std::endl;
+		}
+	}
+
+	return resourceId;
+}
 
 //template<>
 //inline Sprite* Resources::GetResourceById<Sprite>(ResourceId id)
