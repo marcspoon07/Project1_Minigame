@@ -3,7 +3,7 @@
 Video::Video()
 {
 	m_ScreenWidth = 960;
-	mScreenHeight = 540;
+	m_ScreenHeight = 540;
 
 	m_Window = NULL;
 
@@ -11,7 +11,7 @@ Video::Video()
 
 	m_WindowTitle = "Los q bitos";
 
-	m_Window = SDL_CreateWindow(m_WindowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_ScreenWidth, mScreenHeight, SDL_WINDOW_SHOWN);
+	m_Window = SDL_CreateWindow(m_WindowTitle.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, m_ScreenWidth, m_ScreenHeight, SDL_WINDOW_SHOWN);
 	m_ScreenSurface = SDL_GetWindowSurface(m_Window);
 
 	m_LastTime = 0;
@@ -26,24 +26,19 @@ Video::~Video()
 
 }
 
-unsigned int Video::getDeltaTime()
-{
-	return m_DeltaTime;
-}
-
 void Video::ResizeWindow(int width, int height)
 {
 	SDL_SetWindowSize(m_Window, width, height);
 	m_ScreenWidth = width;
-	mScreenHeight = height;
+	m_ScreenHeight = height;
 }
 
-void Video::clearScreen()
+void Video::ClearScreen()
 {
 	SDL_FillRect(m_ScreenSurface, NULL, 0xFFFFFF);
 }
 
-void Video::updateScreen()
+void Video::UpdateScreen()
 {
 	std::string title = m_WindowTitle;
 	title += " - ";
@@ -52,12 +47,12 @@ void Video::updateScreen()
 	SDL_UpdateWindowSurface(m_Window);
 }
 
-void Video::waitTime(int ms)
+void Video::Delay(int ms)
 {
 	SDL_Delay(ms);
 }
 
-void Video::tickDelay()
+void Video::TickDelay()
 {
 	m_CurrentTime = SDL_GetTicks();
 
@@ -70,7 +65,7 @@ void Video::tickDelay()
 	m_LastTime = m_CurrentTime;
 }
 
-void Video::close()
+void Video::Close()
 {
 	SDL_DestroyWindow(m_Window);
 	SDL_Quit();
