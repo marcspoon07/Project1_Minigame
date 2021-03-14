@@ -13,6 +13,7 @@ Spawner::~Spawner()
 
 void Spawner::SpawnWave()
 {
+	
 	for (int i = 0; i < m_MaxEenmies; i++)
 	{
 		if (m_CurrentEnemies <= m_MaxEenmies)

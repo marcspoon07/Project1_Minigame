@@ -1,4 +1,5 @@
 #pragma once
+#include "Enemy.h"
 class Spawner
 {
 private: 
@@ -10,6 +11,8 @@ private:
 	float m_WaveSpeed;
 
 	bool m_WaveIsActive;
+
+	Enemy *m_Enemies;
 
 public:
 	Spawner();
