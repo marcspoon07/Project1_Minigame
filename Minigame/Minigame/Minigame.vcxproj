@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Spawner.cpp" />
     <ClCompile Include="src\source\Audio.cpp" />
     <ClCompile Include="src\source\Debug.cpp" />
     <ClCompile Include="src\source\Game.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="src\source\Video.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Spawner.h" />
     <ClInclude Include="src\headers\Audio.h" />
     <ClInclude Include="src\headers\Debug.h" />
     <ClInclude Include="src\headers\Game.h" />
