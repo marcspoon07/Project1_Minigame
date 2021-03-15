@@ -8,6 +8,7 @@
 
 class Conveyor {
 	private:
+		uint32 m_ConveyorOffsetX;
 		Vector2i m_Position;
 
 		ResourceId m_ConveyorSheet;
@@ -15,6 +16,7 @@ class Conveyor {
 		Sizei m_ConveyorSize;
 
 		Animation m_ConveyorAnimation;
+		Animation m_BoardAnimation;
 
 		uint32 m_ConveyorCount;
 
