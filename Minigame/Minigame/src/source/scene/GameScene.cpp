@@ -57,7 +57,7 @@ void GameScene::ProcessInput()
 
 	if (m_Input->getKey(SDL_SCANCODE_UP)) {
 		if (!m_Portal.IsActive()) {
-			m_Portal.Activate({ 240, 316 }, m_Spawner.getMultiplier());
+			m_Portal.Activate({ 254, 316 }, m_Spawner.getMultiplier());
 			m_ActiveScancode = SDL_SCANCODE_UP;
 		}
 	}
@@ -70,7 +70,7 @@ void GameScene::ProcessInput()
 
 	if (m_Input->getKey(SDL_SCANCODE_DOWN)) {
 		if (!m_Portal.IsActive()) {
-			m_Portal.Activate({ 240, 420 }, m_Spawner.getMultiplier());
+			m_Portal.Activate({ 254, 420 }, m_Spawner.getMultiplier());
 			m_ActiveScancode = SDL_SCANCODE_DOWN;
 		}
 	}
@@ -117,8 +117,9 @@ void GameScene::RenderLoop()
 	m_Conveyor.setPosition(m_SecondConveyorPosition);
 	m_Conveyor.Render();
 
-	m_Spawner.Render();
 	m_Portal.Render();
+	m_Spawner.Render();
+	
 	m_HUD.Render();
 
 }

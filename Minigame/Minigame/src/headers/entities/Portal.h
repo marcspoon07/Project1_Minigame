@@ -35,6 +35,8 @@ private:
 	Renderer2D* m_Renderer2D;
 	Audio* m_Audio;
 
+	uint32 m_ShrinkCollider;
+
 	void CheckCharacters();
 	bool Collide(Rectangle rect);
 public:

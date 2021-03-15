@@ -6,6 +6,8 @@ Portal::Portal()
 	m_AnimStep = 0;
 	m_AnimMaxSteps = 3;
 
+	m_ShrinkCollider = 30;
+
 	m_Video = Video::getInstance();
 	m_Renderer2D = Renderer2D::getInstance();
 	m_Audio = Audio::getInstance();
@@ -28,19 +30,24 @@ void Portal::CheckCharacters()
 
 bool Portal::Collide(Rectangle rect)
 {
-	if (rect.x >= m_Position.x && rect.x <= m_Position.x + SPRITE_SIZE) {
-		if (rect.y >= m_Position.y && rect.y <= m_Position.y + SPRITE_SIZE) {
+	Vector2i pos = m_Position;
+	pos.x += m_ShrinkCollider / 2;
+
+	uint32 size = SPRITE_SIZE - m_ShrinkCollider * 2;
+
+	if (rect.x >= pos.x && rect.x <= pos.x + size) {
+		if (rect.y >= pos.y && rect.y <= pos.y + size) {
 			return true;
 		}
-		else if (m_Position.y >= rect.y && m_Position.y <= rect.y + SPRITE_SIZE) {
+		else if (pos.y >= rect.y && pos.y <= rect.y + SPRITE_SIZE) {
 			return true;
 		}
 	}
-	else if (m_Position.x >= rect.x && m_Position.x <= rect.x + SPRITE_SIZE) {
-		if (m_Position.y >= rect.y && m_Position.y <= rect.y + SPRITE_SIZE) {
+	else if (pos.x >= rect.x && pos.x <= rect.x + SPRITE_SIZE) {
+		if (pos.y >= rect.y && pos.y <= rect.y + SPRITE_SIZE) {
 			return true;
 		}
-		else if (rect.y >= m_Position.y && rect.y <= m_Position.y + SPRITE_SIZE) {
+		else if (rect.y >= pos.y && rect.y <= pos.y + size) {
 			return true;
 		}
 	}
