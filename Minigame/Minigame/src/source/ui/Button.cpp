@@ -23,7 +23,7 @@ Button::Button(const char* sheet_path, int x, int y)
 
 	Sprite* sprite = m_Resources->GetResourceById<Sprite>(m_ButtonSpriteSheet);
 
-	m_Size.width = sprite->getWidth() / 4;
+	m_Size.width = sprite->getWidth() / 3;
 	m_Size.height = sprite->getHeight();
 	state = BTNS_NORMAL;
 	m_Position.x = x;

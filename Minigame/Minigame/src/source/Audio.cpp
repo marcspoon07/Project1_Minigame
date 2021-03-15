@@ -16,7 +16,7 @@ Audio::Audio()
 
 	m_MusicChannel = -1;
 
-	m_MusicVolume = 6;
+	m_MusicVolume = 80;
 }
 
 Audio::~Audio()
@@ -39,7 +39,7 @@ int Audio::PlayAudio(Uint32 audioClip, int volume, int loopTimes)
 
 void Audio::PlayMusic(Uint32 audioClip)
 {
-	Mix_Chunk* clip = NULL;//= Resources::getInstance()->GetResourceById<Mix_Chunk>(audioClip);
+	Mix_Chunk* clip = Resources::getInstance()->GetResourceById<Mix_Chunk>(audioClip);
 
 	m_MusicChannel = Mix_PlayChannel(-1, clip, -1);
 	Mix_Volume(m_MusicChannel, m_MusicVolume);

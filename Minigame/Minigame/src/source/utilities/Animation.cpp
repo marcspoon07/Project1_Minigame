@@ -14,12 +14,14 @@ Animation::~Animation()
 }
 
 
-void Animation::Init(const char * path, uint32 frameCount, uint32 frameSpeed, uint32 positionY)
+void Animation::Init(const char * path, uint32 frameCount, uint32 frameSpeed, uint32 positionY, uint32 width, uint32 height)
 {
 	m_SpriteSheet = m_Resources->Load<Sprite>(path);
 	m_FramesCount = frameCount;
 	m_FrameSpeed = frameSpeed;
 	m_PositionY = positionY;
+	m_Width = width;
+	m_Height = height;
 }
 
 void Animation::Update()
@@ -38,5 +40,5 @@ void Animation::Update()
 
 void Animation::Render()
 {
-	m_Renderer2D->RenderGraphic(m_SpriteSheet, (m_ActiveFrame*SPRITE_SIZE), m_PositionY, m_Position.x, m_Position.y, SPRITE_SIZE, SPRITE_SIZE);
+	m_Renderer2D->RenderGraphic(m_SpriteSheet, (m_ActiveFrame*m_Width), (m_PositionY * m_Height), m_Position.x, m_Position.y, m_Width, m_Height);
 }

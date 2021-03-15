@@ -6,6 +6,8 @@ Scene::Scene()
 {
 	m_MaxTimeEntering = 0;
 	m_MaxTimeLeaving = 0;
+
+	m_Input = Input::getInstance();
 }
 
 Scene::~Scene()

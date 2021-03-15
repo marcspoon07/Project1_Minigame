@@ -45,7 +45,6 @@ int main(int argc, char* args[]) {
 	video->Close();
 
 	// Delete all singletons
-
 	delete video;
 	delete input;
 	delete audio;

@@ -14,17 +14,16 @@ Character::~Character()
 
 void Character::Init(uint32 choosenType, uint32 frameSpeed, Vector2i pos)
 {
+	m_IsAlive = true;
+	m_Eaten = false;
 	m_Type = static_cast<CharacterType>(choosenType);
 	m_Score = 10;
-	m_CharacterAnimation.Init("Assets/Sprites/characters.png", 2, 500 / frameSpeed, choosenType * SPRITE_SIZE);
+	m_CharacterAnimation.Init("Assets/Sprites/characters.png", 2, 500 / frameSpeed, choosenType);
 	m_CharacterAnimation.setPosition(pos);
 
 	m_Pos = pos;
 	m_Speed = frameSpeed;
-
-	if (m_Type == FIRE || m_Type == POISON) {
-		m_Score *= -1;
-	}
+	m_LimitX = 180;
 }
 
 void Character::Update()
@@ -33,16 +32,17 @@ void Character::Update()
 
 	m_CharacterAnimation.Update();
 	m_CharacterAnimation.setPosition(m_Pos);
+
+	if (m_Pos.x <= m_LimitX) {
+		m_Eaten = true;
+
+		Kill();
+	}
 }
 
 void Character::Render()
 {
 	m_CharacterAnimation.Render();
-}
-
-void Character::Death(int * score)
-{
-	*score += m_Score;
 }
 
 void Character::Move()

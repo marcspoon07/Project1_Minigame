@@ -36,6 +36,8 @@ class Scene {
 		virtual void RenderLeave(){}
 
 		unsigned int m_MaxTimeEntering, m_MaxTimeLeaving;
+
+		Input* m_Input;
 	private:
 		State m_CurrentState;
 		unsigned int m_TransitionTimer;
