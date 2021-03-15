@@ -14,7 +14,8 @@ You must save the giant Block Eater of the invasion of blocks! Avoid the dangero
  
 ## Controls
 
- - Arrows Up and Down
+ - Arrow Up: Spawn portal in the first conveyor
+ - Arrow Down: Spawn portal in the second conveyor
 
 ## Developers
 
