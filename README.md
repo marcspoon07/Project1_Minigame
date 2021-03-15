@@ -2,7 +2,8 @@
 
 ## Description
 
-You must save the giant Block Eater of the invasion of blocks! Avoid the dangerous ones and do not miss the beneficial ones. How long can you keep playing without losing all of your lives?
+You must save the giant Block Eater of the invasion of blocks! Avoid the dangerous ones and do not miss the beneficial ones. Add a portal to remove the fire and toxic blocks from the map and let the green and water blocks to enter Block Eater's mouth.
+How long can you keep playing without losing all of your lives?
 
 ## Key Features
 
