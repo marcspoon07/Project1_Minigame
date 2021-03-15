@@ -2,7 +2,7 @@
 
 ## Description
 
-You must save the giant Block Eater of the invasion of blocks! Avoid the dangerous ones and do not miss the beneficial ones. How long can you keep playing without losing all of your life?
+You must save the giant Block Eater of the invasion of blocks! Avoid the dangerous ones and do not miss the beneficial ones. How long can you keep playing without losing all of your lives?
 
 ## Key Features
 
